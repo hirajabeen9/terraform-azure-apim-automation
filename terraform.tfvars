@@ -1,0 +1,7 @@
+api_name        = "test-api"
+rg_name         = "automate-apim"
+apim_name       = "auto-apim"
+location        = "West Europe"
+storage_name    = "mystorage1234"
+publisher_name  = "My Company"
+publisher_email = "company@terraform.io"
