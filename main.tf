@@ -38,8 +38,4 @@ module "api" {
   apim_name          = module.apim.apim_name
   api_name           = var.api_name
 }
-module "api" {
-  source              = "./modules/api"
-  resource_group_name = module.resource_group.resource_group_name
-  apim_name           = module.apim.apim_name
-}
+
