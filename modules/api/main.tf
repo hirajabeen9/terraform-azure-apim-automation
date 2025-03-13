@@ -4,7 +4,7 @@ resource "azurerm_api_management_api" "api" {
   resource_group_name = var.rg_name
   api_management_name = var.apim_name
   revision            = "1"
-  display_name        = "Public API Proxy"
+  display_name        = "Public API"
   protocols           = ["https"]
   path                = "testapim"   # Base path for your API
 
