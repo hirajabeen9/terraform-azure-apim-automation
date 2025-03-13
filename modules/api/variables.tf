@@ -3,12 +3,14 @@ variable "api_name" {
   type        = string
 }
 
-variable "rg_name" {
-  description = "The name of the resource group"
+variable "resource_group_name" {
+  description = "Name of the Resource Group"
   type        = string
 }
 
 variable "apim_name" {
-  description = "The name of the API Management instance"
+  description = "Name of the API Management instance"
   type        = string
 }
+
+

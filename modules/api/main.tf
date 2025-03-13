@@ -1,18 +1,18 @@
-# Define API Management API
 resource "azurerm_api_management_api" "api" {
-  name                = "test-api"
-  resource_group_name = azurerm_resource_group.rg_name.name
-  api_management_name = azurerm_api_management.apim_name.name
-  revision            = "1"  # No semicolon in name
+  name                = var.api_name
+  resource_group_name = var.resource_group_name  # Use the variable instead
+  api_management_name = var.apim_name            # Use the variable instead
+  revision            = "1"
   display_name        = "Test API"
   path               = "test"
   protocols          = ["https"]
 
   import {
     content_format = "swagger-link-json"
-    content_value  = "https://jsonplaceholder.typicode.com/swagger.json" # Public API
+    content_value  = "https://jsonplaceholder.typicode.com/swagger.json"
   }
 }
+
 
 # Define Backend (JSONPlaceholder)
 resource "azurerm_api_management_backend" "public_api" {
