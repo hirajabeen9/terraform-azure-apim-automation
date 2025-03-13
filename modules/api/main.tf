@@ -1,6 +1,6 @@
 resource "azurerm_api_management_api" "api" {
   name                = var.api_name
-  resource_group_name = var.resource_group_name  # Use the variable instead
+  resource_group_name = var.rg_name  # Use the variable instead
   api_management_name = var.apim_name            # Use the variable instead
   revision            = "1"
   display_name        = "Test API"
