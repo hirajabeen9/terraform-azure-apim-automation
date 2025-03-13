@@ -9,3 +9,5 @@ resource "azurerm_storage_account" "storage" {
 resource "random_id" "storage" {
   byte_length = 4
 }
+
+

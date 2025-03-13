@@ -54,7 +54,7 @@ resource "azurerm_api_management_api_operation" "delete_operation" {
 
 # Example policy for GET
 resource "azurerm_api_management_api_operation_policy" "get_policy" {
-  api_name            = azurerm_api_management_api_operation.get_operation.api_name
+  api_name = azurerm_api_management_api.api.name
   api_management_name = var.apim_name
   resource_group_name = var.rg_name
   operation_id        = azurerm_api_management_api_operation.get_operation.operation_id
@@ -76,7 +76,7 @@ XML
 
 # Example policy for POST
 resource "azurerm_api_management_api_operation_policy" "post_policy" {
-  api_name            = azurerm_api_management_api_operation.post_operation.api_name
+  api_name = azurerm_api_management_api.api.name
   api_management_name = var.apim_name
   resource_group_name = var.rg_name
   operation_id        = azurerm_api_management_api_operation.post_operation.operation_id
@@ -98,7 +98,7 @@ XML
 
 # Example policy for PUT
 resource "azurerm_api_management_api_operation_policy" "put_policy" {
-  api_name            = azurerm_api_management_api_operation.put_operation.api_name
+  api_name = azurerm_api_management_api.api.name
   api_management_name = var.apim_name
   resource_group_name = var.rg_name
   operation_id        = azurerm_api_management_api_operation.put_operation.operation_id
@@ -120,7 +120,7 @@ XML
 
 # Example policy for DELETE
 resource "azurerm_api_management_api_operation_policy" "delete_policy" {
-  api_name            = azurerm_api_management_api_operation.delete_operation.api_name
+  api_name = azurerm_api_management_api.api.name
   api_management_name = var.apim_name
   resource_group_name = var.rg_name
   operation_id        = azurerm_api_management_api_operation.delete_operation.operation_id
