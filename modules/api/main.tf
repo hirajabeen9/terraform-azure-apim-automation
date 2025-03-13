@@ -55,7 +55,7 @@ resource "azurerm_api_management_api_operation" "put_operation" {
   method              = "PUT"
   url_template        = "/posts/{id}"  # ✅ JSONPlaceholder format
 
-  template_parameters {
+  template_parameter {
     name     = "id"
     required = true
     type     = "string"
@@ -77,7 +77,7 @@ resource "azurerm_api_management_api_operation" "delete_operation" {
   method              = "DELETE"
   url_template        = "/posts/{id}"  # ✅ Corrected Path
 
-  template_parameters {
+  template_parameter {
     name     = "id"
     required = true
     type     = "string"
