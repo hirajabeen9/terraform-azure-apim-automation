@@ -55,11 +55,12 @@ resource "azurerm_api_management_api_operation" "put_operation" {
       type     = "string"
     }
   }
+response {
+  status_code = 200
+      description = "Success"
 
-  response {
-    status = 200
-    description = "Success"
-  }
+}
+
 }
 
 # DELETE Operation (Fix)
@@ -80,7 +81,7 @@ resource "azurerm_api_management_api_operation" "delete_operation" {
   }
 
   response {
-    status = 204
+    status_code = 204
     description = "No Content"
   }
 }
