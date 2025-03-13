@@ -30,7 +30,7 @@ resource "azurerm_api_management_api_operation" "post_operation" {
   url_template        = "/resource"
 }
 
-# PUT Operation
+# PUT Operation (Fix)
 resource "azurerm_api_management_api_operation" "put_operation" {
   operation_id        = "put-operation"
   api_name            = azurerm_api_management_api.api.name
@@ -38,10 +38,31 @@ resource "azurerm_api_management_api_operation" "put_operation" {
   resource_group_name = var.rg_name
   display_name        = "PUT Resource"
   method              = "PUT"
-  url_template        = "/resource/{id}"
+  url_template        = "/resource/{id}"  # ✅ Keep placeholder format
+
+  # ✅ Add template_parameters for ID
+  template_parameters {
+    name     = "id"
+    required = true
+    type     = "string"
+  }
+
+  # ✅ Include request and response validation
+  request {
+    query_parameters {
+      name     = "id"
+      required = true
+      type     = "string"
+    }
+  }
+
+  response {
+    status = 200
+    description = "Success"
+  }
 }
 
-# DELETE Operation
+# DELETE Operation (Fix)
 resource "azurerm_api_management_api_operation" "delete_operation" {
   operation_id        = "delete-operation"
   api_name            = azurerm_api_management_api.api.name
@@ -50,6 +71,18 @@ resource "azurerm_api_management_api_operation" "delete_operation" {
   display_name        = "DELETE Resource"
   method              = "DELETE"
   url_template        = "/resource/{id}"
+
+  # ✅ Add template_parameters for ID
+  template_parameters {
+    name     = "id"
+    required = true
+    type     = "string"
+  }
+
+  response {
+    status = 204
+    description = "No Content"
+  }
 }
 
 # Example policy for GET
