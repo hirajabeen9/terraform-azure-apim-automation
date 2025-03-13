@@ -1,12 +1,12 @@
 # Define API Management API
 resource "azurerm_api_management_api" "api" {
-  name                = var.api_name
-  resource_group_name = var.rg_name
-  api_management_name = var.apim_name
-  revision            = "1"
-  display_name        = "Public API"
-  protocols           = ["https"]
-  path                = "testapim"   # Base path for your API
+  name                = "test-api"
+  resource_group_name = azurerm_resource_group.rg.name
+  api_management_name = azurerm_api_management.apim.name
+  revision            = "1"  # No semicolon in name
+  display_name        = "Test API"
+  path               = "test"
+  protocols          = ["https"]
 
   import {
     content_format = "swagger-link-json"
