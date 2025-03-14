@@ -8,9 +8,10 @@ resource "azurerm_api_management_api" "api" {
   protocols          = ["https"]
 
   import {
-    content_format = "swagger-link-json"
-    content_value  = "https://jsonplaceholder.typicode.com/swagger.json"
-  }
+  content_format = "swagger-link-json"
+  content_value  = "https://petstore.swagger.io/v2/swagger.json"
+}
+
 }
 
 
